@@ -32,7 +32,7 @@ const ModelsDropdown: React.FC<ModelsDropdownProps> = ({ selectedModel, onModelC
       "name": "Google",
       "models": [
         {"id": "gemini-2.5-pro-preview", "name": "Gemini 2.5 Pro Preview"},
-        {"id": "gemini-2.0-flash", "name": "Gemini 2.0 Flash"},
+        {"id": "gemini-2.5-flash-preview-04-17", "name": "Gemini 2.5 Flash"},
       ],
       "requires_key": true,
       "key_env": "GEMINI_API_KEY"

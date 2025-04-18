@@ -15,7 +15,7 @@ if not api_key:
 
 async def run_agent(task: str, browser: Browser | None = None, max_steps: int = 38):
 	browser = browser or Browser()
-	llm = ChatGoogleGenerativeAI(model='gemini-2.0-flash-exp', api_key=SecretStr(api_key))
+	llm = ChatGoogleGenerativeAI(model='gemini-2.5-flash-preview-04-17', api_key=SecretStr(api_key))
 	agent = Agent(task=task, llm=llm, browser=browser)
 	result = await agent.run(max_steps=max_steps)
 	return result

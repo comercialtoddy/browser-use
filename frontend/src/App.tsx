@@ -6,7 +6,7 @@ import { weatherService, newsService, searchService, providerService } from './s
 import { WeatherWidget, NewsCard, AppBanner, ModelsDropdown, ResultsPanel } from './components'
 
 // Lista de modelos compatíveis com o modo de pesquisa profunda (DeepResearcher)
-const SUPPORTED_RESEARCH_MODELS = ['gemini-2.5-pro-preview', 'gemini-2.0-flash'];
+const SUPPORTED_RESEARCH_MODELS = ['gemini-2.5-flash-preview-04-17', 'gemini-2.0-flash'];
 
 // Interface para itens de notícias
 interface NewsItem {
@@ -447,6 +447,13 @@ function App() {
           <h1 className="text-5xl font-light bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">O que você deseja saber?</h1>
         </div>
         
+        {/* Resultados da pesquisa */}
+        {(results || isLoading) && (
+          <div className="w-full max-w-2xl mb-6">
+            <ResultsPanel results={results} loading={isLoading} />
+          </div>
+        )}
+        
         {/* Formulário de pesquisa - agora input chat */}
         <div className="w-full max-w-2xl mb-3">
           <form onSubmit={handleSearch} className="relative">
@@ -533,9 +540,6 @@ function App() {
               ))}
             </div>
           </div>
-          
-          {/* Resultados da pesquisa - movido para depois dos outros componentes */}
-          {(results || isLoading) && <ResultsPanel results={results} loading={isLoading} />}
         </div>
       </div>
       
