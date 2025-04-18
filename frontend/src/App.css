@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos para o modo escuro */
+@layer base {
+  html {
+    @apply text-gray-200;
+  }
+  
+  body {
+    @apply bg-gray-900;
+  }
+}
+
+/* Estilos para o markdown */
+.markdown {
+  @apply text-gray-200;
+}
+
+.markdown h1 {
+  @apply text-2xl font-bold mb-4 text-orange-400;
+}
+
+.markdown h2 {
+  @apply text-xl font-bold mb-3 text-orange-300;
+}
+
+.markdown h3 {
+  @apply text-lg font-bold mb-2 text-orange-200;
+}
+
+.markdown p {
+  @apply mb-4;
+}
+
+.markdown ul,
+.markdown ol {
+  @apply mb-4 pl-5;
+}
+
+.markdown ul {
+  @apply list-disc;
+}
+
+.markdown ol {
+  @apply list-decimal;
+}
+
+.markdown a {
+  @apply text-blue-400 hover:underline;
+}
+
+.markdown blockquote {
+  @apply border-l-4 border-gray-600 pl-4 italic text-gray-400 my-4;
+}
+
+.markdown code {
+  @apply bg-gray-800 rounded px-1 py-0.5 text-sm;
+}
+
+.markdown pre {
+  @apply bg-gray-800 rounded p-4 overflow-x-auto mb-4;
+}
+
+.markdown table {
+  @apply w-full border-collapse mb-4;
+}
+
+.markdown table th,
+.markdown table td {
+  @apply border border-gray-700 p-2;
+}
+
+.markdown table th {
+  @apply bg-gray-800;
+}
+
+/* Animação de carregamento */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Estilo base para o aplicativo */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0a0a0a;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Padrão de grid futurista */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Animação de pulsação lenta */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Efeito de reflexo para elementos de vidro */
+.glass-reflection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 100%
+  );
+  transform: rotate(30deg);
+  animation: glass-shine 8s ease-in-out infinite;
+}
+
+@keyframes glass-shine {
+  0% {
+    left: -100%;
+  }
+  20%, 100% {
+    left: 100%;
+  }
+}
+
+/* Efeito de scanline futurista */
+.scanline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(59, 130, 246, 0.1);
+  z-index: 999;
+  animation: scanline 8s linear infinite;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+@keyframes scanline {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+/* Personalização de scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.5);
+}
+
+/* Animação de digitação para o título */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.typing-effect {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(40, end);
+}
+
+/* Animação de fade in para dropdowns */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+/* Estilo para posicionar o texto do input na mesma posição do placeholder */
+.input-aligned-placeholder {
+  caret-color: #60a5fa; /* Cor do cursor - azul */
+}
+
+.input-aligned-placeholder:empty::before {
+  content: attr(placeholder);
+  position: absolute;
+  top: 12px;
+  left: 24px;
+  color: rgba(96, 165, 250, 0.6);
+  pointer-events: none;
+}
+
+.input-aligned-placeholder:focus {
+  outline: none;
+}
+
+/* Para quando o input está vazio, posiciona o cursor no mesmo lugar do placeholder */
+.input-cursor-top {
+  vertical-align: top !important;
+  text-align: left !important;
+}
+
+/* Estilos para persistência visual de botões */
+.btn-mode {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-mode::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.btn-mode.active::before {
+  width: 100%;
+} 

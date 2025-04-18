@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo -->
+  <rect width="100%" height="100%" fill="#111827" />
+  
+  <!-- Barra lateral -->
+  <rect x="0" y="0" width="50" height="800" fill="#1F2937" />
+  
+  <!-- Botões da barra lateral -->
+  <circle cx="25" cy="30" r="15" fill="#374151" />
+  <circle cx="25" cy="80" r="15" fill="#374151" />
+  <circle cx="25" cy="130" r="15" fill="#374151" />
+  
+  <!-- Área principal -->
+  <g transform="translate(150, 200)">
+    <!-- Ícone -->
+    <circle cx="400" cy="0" r="25" fill="#F97316" />
+    <path d="M395,10 L405,0 L395,-10" stroke="white" stroke-width="2" fill="none" />
+    
+    <!-- Título -->
+    <text x="400" y="60" font-family="Arial" font-size="36" font-weight="300" fill="#E5E7EB" text-anchor="middle">Como vai, Paulo Junior Machado?</text>
+    
+    <!-- Campo de entrada -->
+    <rect x="250" y="120" width="700" height="60" rx="12" fill="#1F2937" stroke="#374151" />
+    <text x="270" y="155" font-family="Arial" font-size="16" fill="#9CA3AF">Como posso ajudar você hoje?</text>
+    
+    <!-- Botões no campo -->
+    <circle cx="635" cy="150" r="15" fill="#F97316" />
+    <text x="635" cy="155" font-family="Arial" font-size="14" fill="white" text-anchor="middle">↑</text>
+    
+    <!-- Texto do modelo -->
+    <text x="560" y="155" font-family="Arial" font-size="12" fill="#9CA3AF">Claude 3.7 Sonnet</text>
+    
+    <!-- Plano -->
+    <text x="400" y="220" font-family="Arial" font-size="14" fill="#6B7280" text-anchor="middle">plano Gratuito · <tspan fill="#3B82F6">Fazer Upgrade</tspan></text>
+  </g>
+</svg> 
